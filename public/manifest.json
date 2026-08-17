@@ -1,0 +1,16 @@
+{
+  "name": "CreditWise AI",
+  "short_name": "CreditWise",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#155EEF",
+  "description": "AI-powered financial intelligence",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

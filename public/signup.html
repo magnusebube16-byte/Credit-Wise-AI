@@ -29,11 +29,11 @@
       <form id="signupForm">
         <label>Full Name</label>
         <input
-          type="text"
-          placeholder="Enter your full name"
-          required
-        >
-
+  type="text"
+  name="name"
+  placeholder="Enter your full name"
+  required
+>
         <label>Email Address</label>
         <input
           type="email"
@@ -77,8 +77,18 @@
   document.getElementById("signupForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
+    const nameInput = document.querySelector('input[name="name"]');
+    const name = nameInput.value.trim();
+
+    if (!name) {
+      alert("Please enter your name.");
+      return;
+    }
+
+    localStorage.setItem("userName", name);
+
     window.location.href = "./goal.html";
   });
 </script>
-
 </body>
+ 

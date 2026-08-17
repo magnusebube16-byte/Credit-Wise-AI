@@ -50,3 +50,10 @@ const CreditWise = {
   }
 
 };
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .then(() => console.log("CreditWise AI app ready"))
+      .catch(error => console.error("Service worker error:", error));
+  });
+}
