@@ -29,7 +29,7 @@
       </div>
 
       <div class="profile-info">
-        <h2>Demo User</h2>
+        <h2 id="profile-name">Demo User</h2>
         <p>CreditWise member</p>
       </div>
 
@@ -43,7 +43,7 @@
 
       <div>
         <span>Financial Trust Score</span>
-        <strong>72<span>/100</span></strong>
+        <strong><span id="profile-score">72</span><span>/100</span></strong>
       </div>
 
       <button onclick="window.location.href='score.html'">
@@ -63,7 +63,7 @@
 
         <div class="setting-text">
           <strong>Financial goal</strong>
-          <span>Build savings</span>
+          <span id="profile-goal">Build savings</span>
         </div>
 
         <span class="setting-arrow">›</span>
@@ -74,7 +74,7 @@
 
         <div class="setting-text">
           <strong>Monthly income</strong>
-          <span>₦245,000</span>
+          <span id="profile-income">₦0</span>
         </div>
 
         <span class="setting-arrow">›</span>
@@ -164,9 +164,16 @@
 
   <script>
 
+<script src="app.js?v=3"></script>
+const profileUser = CreditWise.getUser();
+
+document.getElementById("profile-name").textContent = profileUser.name;
+document.getElementById("profile-score").textContent = CreditWise.getScore();
+document.getElementById("profile-goal").textContent = profileUser.goal;
+document.getElementById("profile-income").textContent = profileUser.income;
     function editProfile() {
-      alert("Profile editing will be available in the full CreditWise app.");
-    }
+  window.location.href = "edit-profile.html";
+}
 
     function showGoal() {
       alert("Your current goal is: Build savings.");
@@ -195,9 +202,9 @@
     }
 
     function logout() {
-      localStorage.clear();
-      window.location.href = "index.html";
-    }
+  localStorage.setItem("loggedIn", "false");
+  window.location.href = "index.html";
+}
 
   </script>
 

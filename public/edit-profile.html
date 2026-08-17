@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#155EEF">
+  <title>Edit Profile — CreditWise AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="profile-screen">
+
+    <header class="page-header">
+      <button class="back-btn" onclick="window.location.href='profile.html'">
+        ←
+      </button>
+
+      <h1>Edit Profile</h1>
+
+      <div class="header-space"></div>
+    </header>
+
+    <section class="settings-card">
+
+      <div class="setting-row">
+        <div class="setting-text">
+          <strong>Full name</strong>
+          <input id="name" type="text" placeholder="Your name">
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-text">
+          <strong>Email</strong>
+          <input id="email" type="email" placeholder="you@example.com">
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-text">
+          <strong>Phone</strong>
+          <input id="phone" type="tel" placeholder="+234...">
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-text">
+          <strong>Financial goal</strong>
+          <select id="goal">
+            <option value="Build savings">Build Savings</option>
+            <option value="Build financial trust">Build Financial Trust</option>
+            <option value="Access credit">Access Credit</option>
+            <option value="Grow my business">Grow My Business</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-text">
+          <strong>Monthly income</strong>
+          <input id="income" type="number" min="0">
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-text">
+          <strong>Monthly savings</strong>
+          <input id="savings" type="number" min="0">
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-text">
+          <strong>Monthly spending</strong>
+          <input id="spending" type="number" min="0">
+        </div>
+      </div>
+
+    </section>
+
+    <button class="primary-btn" onclick="saveProfile()">
+      Save Changes
+      <span>✓</span>
+    </button>
+
+  </main>
+
+  <script src="app.js?v=3"></script>
+
+  <script>
+    document.getElementById("name").value =
+      localStorage.getItem("userName") || "";
+
+    document.getElementById("email").value =
+      localStorage.getItem("userEmail") || "";
+
+    document.getElementById("phone").value =
+      localStorage.getItem("userPhone") || "";
+
+    document.getElementById("goal").value =
+      localStorage.getItem("creditwiseGoal") || "Build savings";
+
+    document.getElementById("income").value =
+      localStorage.getItem("monthlyIncome") || "";
+
+    document.getElementById("savings").value =
+      localStorage.getItem("monthlySavings") || "";
+
+    document.getElementById("spending").value =
+      localStorage.getItem("monthlySpending") || "";
+
+    function saveProfile() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const goal = document.getElementById("goal").value;
+      const income = Number(document.getElementById("income").value);
+      const savings = Number(document.getElementById("savings").value);
+      const spending = Number(document.getElementById("spending").value);
+
+      if (!name) {
+        alert("Please enter your name.");
+        return;
+      }
+
+      if (income <= 0) {
+        alert("Please enter a valid monthly income.");
+        return;
+      }
+
+      if (savings < 0 || spending < 0) {
+        alert("Savings and spending cannot be negative.");
+        return;
+      }
+
+      if (savings + spending > income) {
+        alert("Your savings and spending cannot be greater than your income.");
+        return;
+      }
+
+      localStorage.setItem("userName", name);
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userPhone", phone);
+      localStorage.setItem("creditwiseGoal", goal);
+      localStorage.setItem("monthlyIncome", String(income));
+      localStorage.setItem("monthlySavings", String(savings));
+      localStorage.setItem("monthlySpending", String(spending));
+
+      window.location.href = "profile.html";
+    }
+  </script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@ function startApp() {
 }
 
 function login() {
-  alert("Login screen coming next.");
+  window.location.href = "login.html";
 }
 
 // =========================
