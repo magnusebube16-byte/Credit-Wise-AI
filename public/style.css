@@ -2050,3 +2050,131 @@ footer {
   color: #98A2B3;
   font-size: 8px;
 }
+/* =========================
+   CREDITWISE AI — HOMEPAGE POLISH
+========================= */
+
+.welcome-screen {
+  background:
+    radial-gradient(circle at 50% 18%, rgba(21, 94, 239, 0.055), transparent 32%),
+    var(--background);
+}
+
+.brand-mark {
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.35),
+    transparent 55%
+  );
+}
+
+.hero-badge {
+  border: 1px solid rgba(21, 94, 239, 0.08);
+  box-shadow: 0 6px 18px rgba(21, 94, 239, 0.05);
+}
+
+h1 {
+  text-wrap: balance;
+}
+
+.finance-visual {
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.finance-visual:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 55px rgba(16, 24, 40, 0.11);
+}
+
+.score-card {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.score {
+  font-size: 36px;
+}
+
+.score-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.score-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+}
+
+.growth-card {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.ai-orb {
+  animation: aiPulse 3s ease-in-out infinite;
+}
+
+.primary-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(255,255,255,0.18) 50%,
+    transparent 75%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.primary-btn:hover::before {
+  transform: translateX(120%);
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(21, 94, 239, 0.27);
+}
+
+.primary-btn span {
+  transition: transform 0.2s ease;
+}
+
+.primary-btn:hover span {
+  transform: translateX(3px);
+}
+
+@keyframes aiPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 0 8px rgba(21, 94, 239, 0.08),
+      0 10px 25px rgba(21, 94, 239, 0.28);
+  }
+
+  50% {
+    transform: scale(1.06);
+    box-shadow:
+      0 0 0 12px rgba(21, 94, 239, 0.05),
+      0 12px 30px rgba(21, 94, 239, 0.32);
+  }
+}
