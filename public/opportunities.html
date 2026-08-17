@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#155EEF">
+  <title>Opportunities — CreditWise AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="opportunities-screen">
+
+    <header class="page-header">
+      <button class="back-btn" onclick="window.location.href='dashboard.html'">
+        ←
+      </button>
+
+      <h1>Opportunities</h1>
+
+      <div class="header-space"></div>
+    </header>
+
+    <section class="opportunity-intro">
+
+      <div class="opportunity-ai-icon">✦</div>
+
+      <span>PERSONALIZED FOR YOU</span>
+
+      <h2>Opportunities that<br><strong>fit your profile.</strong></h2>
+
+      <p>
+        CreditWise AI matches your financial profile with opportunities
+        that may help you reach your goals.
+      </p>
+
+    </section>
+
+    <div class="section-heading">
+      <h2>Recommended for you</h2>
+      <span>3 matches</span>
+    </div>
+
+    <section class="opportunity-card featured">
+
+      <div class="opportunity-card-top">
+        <div class="opportunity-icon credit-icon">₦</div>
+
+        <span class="match-badge">92% match</span>
+      </div>
+
+      <h3>Personal Credit Opportunity</h3>
+
+      <p>
+        Your current Trust Score and income stability indicate
+        that you may be suitable for selected credit products.
+      </p>
+
+      <div class="opportunity-tags">
+        <span>Trust Score 72+</span>
+        <span>Income stable</span>
+      </div>
+
+      <button onclick="viewOpportunity('credit')">
+        View opportunity →
+      </button>
+
+    </section>
+
+    <section class="opportunity-card">
+
+      <div class="opportunity-card-top">
+        <div class="opportunity-icon savings-icon">₦</div>
+
+        <span class="match-badge">87% match</span>
+      </div>
+
+      <h3>High-Yield Savings</h3>
+
+      <p>
+        A savings-focused option could help you grow your
+        emergency fund and strengthen your financial habits.
+      </p>
+
+      <div class="opportunity-tags">
+        <span>Savings goal</span>
+        <span>Low risk</span>
+      </div>
+
+      <button onclick="viewOpportunity('savings')">
+        View opportunity →
+      </button>
+
+    </section>
+
+    <section class="opportunity-card">
+
+      <div class="opportunity-card-top">
+        <div class="opportunity-icon business-icon">↗</div>
+
+        <span class="match-badge">78% match</span>
+      </div>
+
+      <h3>Small Business Financing</h3>
+
+      <p>
+        If you're growing a business, improving your financial
+        profile could increase access to suitable financing.
+      </p>
+
+      <div class="opportunity-tags">
+        <span>Business</span>
+        <span>Growth focused</span>
+      </div>
+
+      <button onclick="viewOpportunity('business')">
+        View opportunity →
+      </button>
+
+    </section>
+
+    <section class="transparency-card">
+
+      <div class="transparency-icon">ⓘ</div>
+
+      <div>
+        <strong>Why am I seeing these?</strong>
+
+        <p>
+          CreditWise uses your authorized financial information,
+          Trust Score and selected goals to personalize recommendations.
+        </p>
+
+        <button onclick="showTransparency()">
+          Learn how matching works →
+        </button>
+      </div>
+
+    </section>
+
+    <nav class="bottom-nav">
+
+      <button onclick="window.location.href='dashboard.html'">
+        <span>⌂</span>
+        Home
+      </button>
+
+      <button onclick="window.location.href='score.html'">
+        <span>◉</span>
+        Insights
+      </button>
+
+      <button onclick="window.location.href='coach.html'">
+        <span>✦</span>
+        AI Coach
+      </button>
+
+      <button class="nav-active">
+        <span>◇</span>
+        Opportunities
+      </button>
+
+      <button onclick="window.location.href='profile.html'">
+        <span>○</span>
+        Profile
+      </button>
+
+    </nav>
+
+  </main>
+
+  <script>
+
+    function viewOpportunity(type) {
+
+      const messages = {
+        credit:
+          "CreditWise matched you with this opportunity based on your Trust Score and income stability.",
+
+        savings:
+          "CreditWise recommends this because consistent savings is one of your strongest improvement opportunities.",
+
+        business:
+          "CreditWise identified this as a potential growth opportunity based on your financial profile."
+      };
+
+      alert(messages[type]);
+    }
+
+    function showTransparency() {
+
+      alert(
+        "CreditWise considers your authorized financial behaviour, Trust Score, financial goals and improvement areas when generating recommendations."
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>

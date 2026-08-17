@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#155EEF">
+  <title>Trust Score — CreditWise AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="score-screen">
+
+    <header class="page-header">
+      <button class="back-btn" onclick="window.location.href='dashboard.html'">
+        ←
+      </button>
+
+      <h1>Trust Score</h1>
+
+      <div class="header-space"></div>
+    </header>
+
+    <section class="score-summary">
+
+      <div class="large-score-ring">
+        <div>
+          <strong id="trust-score">72</strong>
+          <span>/100</span>
+        </div>
+      </div>
+
+      <h2>Good financial trust</h2>
+
+      <p>
+        Your financial behaviour shows a healthy foundation.
+        Keep improving your consistency to unlock more opportunities.
+      </p>
+
+      <div class="score-improvement">
+        ↑ 6 points this month
+      </div>
+
+    </section>
+
+    <section class="breakdown-section">
+
+      <div class="section-heading">
+        <h2>Score breakdown</h2>
+        <span>Based on your activity</span>
+      </div>
+
+      <div class="factor-card">
+
+        <div class="factor-top">
+          <div class="factor-name">
+            <span class="factor-icon">₦</span>
+            <div>
+              <strong>Income Stability</strong>
+              <small>Consistency of income</small>
+            </div>
+          </div>
+
+          <strong class="factor-score">82</strong>
+        </div>
+
+        <div class="factor-bar">
+          <div style="width:82%"></div>
+        </div>
+
+      </div>
+
+      <div class="factor-card">
+
+        <div class="factor-top">
+          <div class="factor-name">
+            <span class="factor-icon">✓</span>
+            <div>
+              <strong>Payment Behaviour</strong>
+              <small>Timeliness of payments</small>
+            </div>
+          </div>
+
+          <strong class="factor-score">76</strong>
+        </div>
+
+        <div class="factor-bar">
+          <div style="width:76%"></div>
+        </div>
+
+      </div>
+
+      <div class="factor-card">
+
+        <div class="factor-top">
+          <div class="factor-name">
+            <span class="factor-icon">◫</span>
+            <div>
+              <strong>Savings Consistency</strong>
+              <small>Regular saving habits</small>
+            </div>
+          </div>
+
+          <strong class="factor-score">68</strong>
+        </div>
+
+        <div class="factor-bar">
+          <div style="width:68%"></div>
+        </div>
+
+      </div>
+
+      <div class="factor-card">
+
+        <div class="factor-top">
+          <div class="factor-name">
+            <span class="factor-icon">↘</span>
+            <div>
+              <strong>Spending Control</strong>
+              <small>How well spending is managed</small>
+            </div>
+          </div>
+
+          <strong class="factor-score">71</strong>
+        </div>
+
+        <div class="factor-bar">
+          <div style="width:71%"></div>
+        </div>
+
+      </div>
+
+      <div class="factor-card">
+
+        <div class="factor-top">
+          <div class="factor-name">
+            <span class="factor-icon">↗</span>
+            <div>
+              <strong>Financial Growth</strong>
+              <small>Improvement over time</small>
+            </div>
+          </div>
+
+          <strong class="factor-score">63</strong>
+        </div>
+
+        <div class="factor-bar">
+          <div style="width:63%"></div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="ai-score-insight">
+
+      <div class="ai-score-title">
+        <div class="ai-mini">✦</div>
+
+        <div>
+          <strong>AI recommendation</strong>
+          <span>CreditWise analysis</span>
+        </div>
+      </div>
+
+      <p>
+        Your strongest area is income stability. Your biggest opportunity
+        is financial growth. Increasing your monthly savings could improve
+        your Trust Score over time.
+      </p>
+
+      <button onclick="window.location.href='plan.html'">
+        See my improvement plan →
+      </button>
+
+    </section>
+
+  </main>
+
+<script>document.getElementById("trust-score").textContent = CreditWise.getScore();</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#155EEF">
+  <title>Dashboard — CreditWise AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="dashboard-screen">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="welcome-small">Good morning 👋</span>
+        <h1>Demo User</h1>
+      </div>
+
+      <button class="notification-btn">♢</button>
+    </header>
+
+    <section class="trust-card">
+
+      <div class="trust-top">
+        <div>
+          <span>Financial Trust Score</span>
+          <div class="trust-score">
+            <span id="trust-score">72</span><span>/100</span>
+          </div>
+        </div>
+
+        <div class="score-ring">
+          <div>GOOD</div>
+        </div>
+      </div>
+
+      <div class="score-change">
+        ↑ 6 points this month
+      </div>
+
+      <div class="score-bar">
+        <div></div>
+      </div>
+
+      <button class="score-link" onclick="viewScore()">
+        View score breakdown →
+      </button>
+
+    </section>
+
+    <div class="section-heading">
+      <h2>Financial snapshot</h2>
+      <span>This month</span>
+    </div>
+
+    <section class="snapshot-grid">
+
+      <div class="money-card">
+        <span>Income</span>
+        <strong>₦245,000</strong>
+        <small>↑ 8.2%</small>
+      </div>
+
+      <div class="money-card">
+        <span>Savings</span>
+        <strong>₦48,500</strong>
+        <small>↑ 12.5%</small>
+      </div>
+
+      <div class="money-card">
+        <span>Spending</span>
+        <strong>₦126,300</strong>
+        <small>↓ 4.1%</small>
+      </div>
+
+    </section>
+
+    <section class="ai-insight">
+
+      <div class="ai-heading">
+        <div class="ai-mini">✦</div>
+        <div>
+          <strong>CreditWise AI Insight</strong>
+          <span>Personalized for you</span>
+        </div>
+      </div>
+
+      <p>
+        Your savings consistency improved this month. Maintaining this habit
+        could strengthen your financial profile.
+      </p>
+
+      <button onclick="openCoach()">
+        Ask AI Coach →
+      </button>
+
+    </section>
+
+    <div class="section-heading opportunities-heading">
+      <h2>Quick actions</h2>
+    </div>
+
+    <section class="quick-actions">
+
+      <button onclick="viewScore()">
+        <span>◉</span>
+        Trust Score
+      </button>
+
+      <button onclick="openCoach()">
+        <span>✦</span>
+        AI Coach
+      </button>
+
+      <button onclick="viewPlan()">
+        <span>✓</span>
+        Improvement Plan
+      </button>
+
+    </section>
+
+    <nav class="bottom-nav">
+
+      <button class="nav-active">
+        <span>⌂</span>
+        Home
+      </button>
+
+      <button onclick="viewScore()">
+        <span>◉</span>
+        Insights
+      </button>
+
+      <button onclick="openCoach()">
+        <span>✦</span>
+        AI Coach
+      </button>
+
+      <button onclick="viewOpportunities()">
+        <span>◇</span>
+        Opportunities
+      </button>
+
+      <button onclick="viewProfile()">
+        <span>○</span>
+        Profile
+      </button>
+
+    </nav>
+
+  </main>
+
+  <script>
+    function viewScore() {
+      window.location.href = "score.html";
+    }
+
+    function openCoach() {
+      window.location.href = "coach.html";
+    }
+
+    function viewPlan() {
+      window.location.href = "plan.html";
+    }
+
+    function viewOpportunities() {
+      window.location.href = "opportunities.html";
+    }
+
+    function viewProfile() {
+      window.location.href = "profile.html";
+    }
+  </script>
+
+<script>document.getElementById("trust-score").textContent = CreditWise.getScore();</script>
+</body>
+</html>

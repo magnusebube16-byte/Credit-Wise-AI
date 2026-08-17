@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#155EEF">
+  <title>AI Coach — CreditWise AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="coach-screen">
+
+    <header class="page-header">
+      <button class="back-btn" onclick="window.location.href='dashboard.html'">
+        ←
+      </button>
+
+      <div class="coach-header-title">
+        <div class="coach-avatar">✦</div>
+        <div>
+          <h1>AI Financial Coach</h1>
+          <span>CreditWise AI</span>
+        </div>
+      </div>
+
+      <div class="header-space"></div>
+    </header>
+
+    <section class="coach-intro">
+
+      <div class="coach-large-avatar">✦</div>
+
+      <h2>How can I help you<br><span>today?</span></h2>
+
+      <p>
+        Ask me about your Trust Score, savings, spending,
+        or ways to improve your financial health.
+      </p>
+
+    </section>
+
+    <section class="suggestions">
+
+      <button onclick="askSuggestion('How can I improve my Trust Score?')">
+        How can I improve my Trust Score?
+      </button>
+
+      <button onclick="askSuggestion('How much should I save each month?')">
+        How much should I save each month?
+      </button>
+
+      <button onclick="askSuggestion('Where am I spending too much?')">
+        Where am I spending too much?
+      </button>
+
+    </section>
+
+    <section class="chat-area" id="chatArea">
+
+      <div class="ai-message">
+        <div class="message-avatar">✦</div>
+
+        <div class="message-bubble">
+          <span class="message-name">CreditWise AI</span>
+
+          <p>
+            Based on your current profile, your strongest area is
+            income stability. I can help you improve your savings
+            consistency and spending habits.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <form class="chat-input-area" onsubmit="sendMessage(event)">
+
+      <input
+        id="messageInput"
+        type="text"
+        placeholder="Ask CreditWise AI..."
+        autocomplete="off"
+      >
+
+      <button type="submit">
+        ↑
+      </button>
+
+    </form>
+
+  </main>
+
+  <script>
+
+    function askSuggestion(question) {
+      document.getElementById("messageInput").value = question;
+      sendMessage(new Event("submit"));
+    }
+
+    function sendMessage(event) {
+      event.preventDefault();
+
+      const input = document.getElementById("messageInput");
+      const chatArea = document.getElementById("chatArea");
+
+      const message = input.value.trim();
+
+      if (!message) return;
+
+      const userMessage = document.createElement("div");
+      userMessage.className = "user-message";
+
+      userMessage.innerHTML = `
+        <div class="user-bubble">
+          ${message}
+        </div>
+      `;
+
+      chatArea.appendChild(userMessage);
+
+      input.value = "";
+
+      setTimeout(() => {
+
+        const aiMessage = document.createElement("div");
+        aiMessage.className = "ai-message";
+
+        let response =
+          "Based on your current CreditWise profile, I recommend focusing on consistent savings and controlled spending. Small improvements each month can strengthen your financial profile over time.";
+
+        if (message.toLowerCase().includes("score")) {
+          response =
+            "Your current Trust Score is 72/100. Your strongest area is income stability. To move toward 80, focus on savings consistency, payment behaviour, and reducing unnecessary spending.";
+        }
+
+        if (message.toLowerCase().includes("save")) {
+          response =
+            "You're currently saving about ₦48,500 per month. A practical next step would be gradually increasing that amount while keeping enough money available for essential expenses.";
+        }
+
+        if (message.toLowerCase().includes("spending")) {
+          response =
+            "Your current spending is ₦126,300 this month. Review discretionary expenses and consider redirecting some of that money toward your savings goal.";
+        }
+
+        aiMessage.innerHTML = `
+          <div class="message-avatar">✦</div>
+
+          <div class="message-bubble">
+            <span class="message-name">CreditWise AI</span>
+            <p>${response}</p>
+          </div>
+        `;
+
+        chatArea.appendChild(aiMessage);
+
+        chatArea.scrollTop = chatArea.scrollHeight;
+
+      }, 500);
+    }
+
+  </script>
+
+</body>
+</html>

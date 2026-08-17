@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#155EEF">
+  <title>Improvement Plan — CreditWise AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="plan-screen">
+
+    <header class="page-header">
+      <button class="back-btn" onclick="window.location.href='score.html'">
+        ←
+      </button>
+
+      <h1>Improvement Plan</h1>
+
+      <div class="header-space"></div>
+    </header>
+
+    <section class="plan-hero">
+
+      <div class="plan-ai-icon">✦</div>
+
+      <span class="plan-label">AI-PERSONALIZED PLAN</span>
+
+      <h2>Let's move your score<br><span>from 72 to 80.</span></h2>
+
+      <p>
+        CreditWise AI identified three areas where small,
+        consistent changes could strengthen your financial profile.
+      </p>
+
+    </section>
+
+    <section class="progress-card">
+
+      <div class="progress-top">
+        <div>
+          <span>Current score</span>
+          <strong id="current-plan-score">72</strong>
+        </div>
+
+        <div class="progress-arrow">→</div>
+
+        <div class="target-score">
+          <span>Target score</span>
+          <strong>80</strong>
+        </div>
+      </div>
+
+      <div class="plan-progress">
+        <div></div>
+      </div>
+
+      <small>8 points to your next financial milestone</small>
+
+    </section>
+
+    <div class="section-heading">
+      <h2>Your action plan</h2>
+      <span>3 priorities</span>
+    </div>
+
+    <section class="action-card">
+
+      <div class="action-number">1</div>
+
+      <div class="action-content">
+
+        <div class="action-title">
+          <div>
+            <strong>Increase monthly savings</strong>
+            <span>Potential impact: +3 points</span>
+          </div>
+
+          <span class="action-check">○</span>
+        </div>
+
+        <p>
+          Aim to increase your monthly savings from
+          ₦48,500 to ₦55,000.
+        </p>
+
+        <div class="action-meta">
+          <span>💰 Savings</span>
+          <span>High impact</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="action-card">
+
+      <div class="action-number">2</div>
+
+      <div class="action-content">
+
+        <div class="action-title">
+          <div>
+            <strong>Maintain payment consistency</strong>
+            <span>Potential impact: +2 points</span>
+          </div>
+
+          <span class="action-check">○</span>
+        </div>
+
+        <p>
+          Keep upcoming payments on schedule to strengthen
+          your payment behaviour.
+        </p>
+
+        <div class="action-meta">
+          <span>✓ Payments</span>
+          <span>Medium impact</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="action-card">
+
+      <div class="action-number">3</div>
+
+      <div class="action-content">
+
+        <div class="action-title">
+          <div>
+            <strong>Reduce unnecessary spending</strong>
+            <span>Potential impact: +3 points</span>
+          </div>
+
+          <span class="action-check">○</span>
+        </div>
+
+        <p>
+          Reduce discretionary spending and redirect a portion
+          toward your savings goal.
+        </p>
+
+        <div class="action-meta">
+          <span>📊 Spending</span>
+          <span>High impact</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="ai-plan-note">
+
+      <div class="ai-mini">✦</div>
+
+      <div>
+        <strong>Why this plan?</strong>
+
+        <p>
+          Your income stability is already strong. CreditWise
+          recommends focusing on savings and spending behaviour
+          because these areas have the greatest opportunity for improvement.
+        </p>
+      </div>
+
+    </section>
+
+    <button class="primary-btn plan-start-btn" onclick="startPlan()">
+      Start My Improvement Plan
+      <span>→</span>
+    </button>
+
+  </main>
+
+  <script>
+    function startPlan() {
+      localStorage.setItem("improvementPlan", "started");
+      alert("Your CreditWise improvement plan has started!");
+    }
+  </script>
+
+<script>document.getElementById("current-plan-score").textContent = CreditWise.getScore();</script>
+</body>
+</html>

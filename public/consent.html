@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#155EEF">
+  <title>Data & Privacy — CreditWise AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="consent-screen">
+
+    <button class="back-btn" onclick="history.back()">←</button>
+
+    <div class="consent-content">
+
+      <div class="step-label">
+        STEP 3 OF 4
+      </div>
+
+      <div class="security-icon">🔐</div>
+
+      <h1>Connect your<br><span>financial information.</span></h1>
+
+      <p class="consent-description">
+        CreditWise uses permitted financial information to understand your financial behaviour and provide personalized insights.
+      </p>
+
+      <div class="data-card">
+
+        <div class="data-title">
+          <span class="data-shield">✓</span>
+          What we may analyze
+        </div>
+
+        <div class="data-item">
+          <span>✓</span>
+          Income patterns
+        </div>
+
+        <div class="data-item">
+          <span>✓</span>
+          Spending behaviour
+        </div>
+
+        <div class="data-item">
+          <span>✓</span>
+          Savings activity
+        </div>
+
+        <div class="data-item">
+          <span>✓</span>
+          Payment patterns
+        </div>
+
+        <div class="data-item">
+          <span>✓</span>
+          Cash-flow behaviour
+        </div>
+
+      </div>
+
+      <div class="privacy-box">
+        <strong>Your control matters.</strong>
+        <p>
+          You decide what information you share. CreditWise only uses information you authorize.
+        </p>
+      </div>
+
+      <button class="primary-btn consent-btn" onclick="connectData()">
+        Connect & Continue
+        <span>→</span>
+      </button>
+
+      <button class="skip-btn" onclick="skipData()">
+        I'll do this later
+      </button>
+
+    </div>
+
+  </main>
+
+  <script>
+    function connectData() {
+      localStorage.setItem("dataConsent", "granted");
+      window.location.href = "dashboard.html";
+    }
+
+    function skipData() {
+      localStorage.setItem("dataConsent", "skipped");
+      window.location.href = "dashboard.html";
+    }
+  </script>
+
+</body
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#155EEF">
+  <title>Create Account — CreditWise AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="signup-screen">
+
+    <button class="back-btn" onclick="history.back()">←</button>
+
+    <div class="signup-content">
+
+      <div class="step-label">
+        STEP 1 OF 4
+      </div>
+
+      <h1>Create your<br><span>CreditWise account.</span></h1>
+
+      <p class="signup-description">
+        Let's get to know you and help you build your financial profile.
+      </p>
+
+      <form id="signupForm">
+        <label>Full Name</label>
+        <input
+          type="text"
+          placeholder="Enter your full name"
+          required
+        >
+
+        <label>Email Address</label>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          required
+        >
+
+        <label>Phone Number</label>
+        <input
+          type="tel"
+          placeholder="+234 800 000 0000"
+          required
+        >
+
+        <label>Create Password</label>
+        <input
+          type="password"
+          placeholder="Create a password"
+          required
+        >
+
+        <button class="primary-btn signup-submit" type="submit">
+          Continue
+          <span>→</span>
+        </button>
+
+      </form>
+
+      <p class="login-text">
+        Already have an account?
+        <button class="login-btn" type="button">
+          Log in
+        </button>
+      </p>
+
+    </div>
+
+  </main>
+
+  <script>
+  document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    window.location.href = "./goal.html";
+  });
+</script>
+
+</body>

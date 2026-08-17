@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#155EEF">
+  <title>Profile — CreditWise AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="profile-screen">
+
+    <header class="page-header">
+      <button class="back-btn" onclick="window.location.href='dashboard.html'">
+        ←
+      </button>
+
+      <h1>Profile</h1>
+
+      <div class="header-space"></div>
+    </header>
+
+    <section class="profile-card">
+
+      <div class="profile-avatar">
+        DU
+      </div>
+
+      <div class="profile-info">
+        <h2>Demo User</h2>
+        <p>CreditWise member</p>
+      </div>
+
+      <button class="edit-btn" onclick="editProfile()">
+        Edit
+      </button>
+
+    </section>
+
+    <section class="profile-score">
+
+      <div>
+        <span>Financial Trust Score</span>
+        <strong>72<span>/100</span></strong>
+      </div>
+
+      <button onclick="window.location.href='score.html'">
+        View score →
+      </button>
+
+    </section>
+
+    <div class="profile-section-title">
+      <h2>Financial profile</h2>
+    </div>
+
+    <section class="settings-card">
+
+      <button class="setting-row" onclick="showGoal()">
+        <div class="setting-icon">◎</div>
+
+        <div class="setting-text">
+          <strong>Financial goal</strong>
+          <span>Build savings</span>
+        </div>
+
+        <span class="setting-arrow">›</span>
+      </button>
+
+      <button class="setting-row" onclick="showIncome()">
+        <div class="setting-icon">₦</div>
+
+        <div class="setting-text">
+          <strong>Monthly income</strong>
+          <span>₦245,000</span>
+        </div>
+
+        <span class="setting-arrow">›</span>
+      </button>
+
+    </section>
+
+    <div class="profile-section-title">
+      <h2>Privacy & security</h2>
+    </div>
+
+    <section class="settings-card">
+
+      <button class="setting-row" onclick="manageData()">
+        <div class="setting-icon privacy-icon">✓</div>
+
+        <div class="setting-text">
+          <strong>Data permissions</strong>
+          <span>Manage information you share</span>
+        </div>
+
+        <span class="setting-arrow">›</span>
+      </button>
+
+      <button class="setting-row" onclick="securityInfo()">
+        <div class="setting-icon security-setting-icon">🔐</div>
+
+        <div class="setting-text">
+          <strong>Security</strong>
+          <span>Your account is protected</span>
+        </div>
+
+        <span class="setting-arrow">›</span>
+      </button>
+
+      <button class="setting-row" onclick="privacyInfo()">
+        <div class="setting-icon">ⓘ</div>
+
+        <div class="setting-text">
+          <strong>Privacy information</strong>
+          <span>How CreditWise uses your data</span>
+        </div>
+
+        <span class="setting-arrow">›</span>
+      </button>
+
+    </section>
+
+    <button class="logout-btn" onclick="logout()">
+      Sign out
+    </button>
+
+    <p class="version">
+      CreditWise AI • Prototype v1.0
+    </p>
+
+    <nav class="bottom-nav">
+
+      <button onclick="window.location.href='dashboard.html'">
+        <span>⌂</span>
+        Home
+      </button>
+
+      <button onclick="window.location.href='score.html'">
+        <span>◉</span>
+        Insights
+      </button>
+
+      <button onclick="window.location.href='coach.html'">
+        <span>✦</span>
+        AI Coach
+      </button>
+
+      <button onclick="window.location.href='opportunities.html'">
+        <span>◇</span>
+        Opportunities
+      </button>
+
+      <button class="nav-active">
+        <span>○</span>
+        Profile
+      </button>
+
+    </nav>
+
+  </main>
+
+  <script>
+
+    function editProfile() {
+      alert("Profile editing will be available in the full CreditWise app.");
+    }
+
+    function showGoal() {
+      alert("Your current goal is: Build savings.");
+    }
+
+    function showIncome() {
+      alert("Your current monthly income is ₦245,000.");
+    }
+
+    function manageData() {
+      alert(
+        "You control which financial information CreditWise can use. Data permissions can be changed at any time."
+      );
+    }
+
+    function securityInfo() {
+      alert(
+        "Your CreditWise account uses secure authentication and authorized data access."
+      );
+    }
+
+    function privacyInfo() {
+      alert(
+        "CreditWise uses authorized financial information to generate Trust Scores, insights and personalized recommendations."
+      );
+    }
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = "index.html";
+    }
+
+  </script>
+
+</body>
+</html>
+

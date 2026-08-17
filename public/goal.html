@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#155EEF">
+  <title>Financial Goal — CreditWise AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="goal-screen">
+
+    <button class="back-btn" onclick="history.back()">←</button>
+
+    <div class="goal-content">
+
+      <div class="step-label">
+        STEP 2 OF 4
+      </div>
+
+      <h1>What are you<br><span>working towards?</span></h1>
+
+      <p class="goal-description">
+        Choose your primary financial goal so we can personalize your CreditWise experience.
+      </p>
+
+      <div class="goal-options">
+
+        <button class="goal-card" onclick="selectGoal(this, 'savings')">
+          <div class="goal-icon savings">₦</div>
+          <div class="goal-info">
+            <strong>Build Savings</strong>
+            <span>Build consistent saving habits.</span>
+          </div>
+          <div class="check">✓</div>
+        </button>
+
+        <button class="goal-card" onclick="selectGoal(this, 'trust')">
+          <div class="goal-icon trust">✓</div>
+          <div class="goal-info">
+            <strong>Build Financial Trust</strong>
+            <span>Strengthen your financial profile.</span>
+          </div>
+          <div class="check">✓</div>
+        </button>
+
+        <button class="goal-card" onclick="selectGoal(this, 'credit')">
+          <div class="goal-icon credit">₦</div>
+          <div class="goal-info">
+            <strong>Access Credit</strong>
+            <span>Prepare for suitable financing.</span>
+          </div>
+          <div class="check">✓</div>
+        </button>
+
+        <button class="goal-card" onclick="selectGoal(this, 'business')">
+          <div class="goal-icon business">↗</div>
+          <div class="goal-info">
+            <strong>Grow My Business</strong>
+            <span>Improve your business financial health.</span>
+          </div>
+          <div class="check">✓</div>
+        </button>
+
+      </div>
+
+      <button class="primary-btn goal-continue" id="goalContinue" onclick="continueGoal()" disabled>
+        Continue
+        <span>→</span>
+      </button>
+
+    </div>
+
+  </main>
+
+  <script>
+    let selectedGoal = null;
+
+    function selectGoal(card, goal) {
+      document.querySelectorAll('.goal-card').forEach(item => {
+        item.classList.remove('selected');
+      });
+
+      card.classList.add('selected');
+      selectedGoal = goal;
+
+      const continueButton = document.getElementById('goalContinue');
+      continueButton.disabled = false;
+      continueButton.classList.add('active');
+    }
+
+    function continueGoal() {
+      if (!selectedGoal) return;
+
+      localStorage.setItem('creditwiseGoal', selectedGoal);
+      window.location.href = 'consent.html';
+    }
+  </script>
+
+</body>
+</html>
