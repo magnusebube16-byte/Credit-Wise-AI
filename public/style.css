@@ -2247,3 +2247,195 @@ h1 {
   font-size: 9px;
   font-weight: 600;
 }
+/* =========================
+   CREDITWISE AI — DASHBOARD POLISH
+========================= */
+
+.dashboard-screen {
+  background:
+    radial-gradient(circle at 85% 5%, rgba(21, 94, 239, 0.05), transparent 25%),
+    var(--background);
+}
+
+.dashboard-header {
+  animation: dashboardFade 0.45s ease both;
+}
+
+.notification-btn {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notification-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(16, 24, 40, 0.08);
+}
+
+/* TRUST CARD UPGRADE */
+
+.trust-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(255,255,255,0.18), transparent 28%),
+    linear-gradient(145deg, #155EEF, #0B4ACB);
+}
+
+.trust-card::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -65px;
+  bottom: -80px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 0 0 25px rgba(255,255,255,0.035),
+    0 0 0 50px rgba(255,255,255,0.025);
+}
+
+.trust-top,
+.score-change,
+.score-bar,
+.score-link {
+  position: relative;
+  z-index: 1;
+}
+
+.trust-score {
+  font-size: 42px;
+}
+
+.score-ring {
+  width: 76px;
+  height: 76px;
+  border: 7px solid rgba(255,255,255,0.18);
+  border-top-color: white;
+  border-right-color: white;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+}
+
+.score-bar div {
+  animation: scoreFill 1s ease-out both;
+}
+
+.score-link {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.score-link:hover {
+  opacity: 0.75;
+}
+
+/* SNAPSHOT CARDS */
+
+.money-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.money-card:hover {
+  transform: translateY(-2px);
+  border-color: #C7D7FE;
+  box-shadow: 0 10px 24px rgba(16, 24, 40, 0.07);
+}
+
+.money-card strong {
+  font-size: 19px;
+}
+
+/* AI INSIGHT */
+
+.ai-insight {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(21, 94, 239, 0.06);
+}
+
+.ai-insight::after {
+  content: "✦";
+  position: absolute;
+  right: 16px;
+  top: 13px;
+  color: rgba(21, 94, 239, 0.12);
+  font-size: 34px;
+}
+
+.ai-mini {
+  box-shadow: 0 7px 16px rgba(21, 94, 239, 0.18);
+}
+
+.ai-insight button {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.ai-insight button:hover {
+  transform: translateX(3px);
+}
+
+/* QUICK ACTIONS */
+
+.quick-actions button {
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.quick-actions button:hover {
+  transform: translateY(-3px);
+  border-color: #C7D7FE;
+  box-shadow: 0 10px 22px rgba(16, 24, 40, 0.07);
+}
+
+.quick-actions button span {
+  transition: transform 0.2s ease;
+}
+
+.quick-actions button:hover span {
+  transform: scale(1.08);
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav {
+  box-shadow: 0 -8px 24px rgba(16, 24, 40, 0.05);
+}
+
+.bottom-nav button {
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.bottom-nav button:hover {
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+@keyframes scoreFill {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 72%;
+  }
+}
+
+@keyframes dashboardFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
