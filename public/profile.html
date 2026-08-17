@@ -123,9 +123,9 @@
 
     </section>
 
-    <button class="logout-btn" onclick="logout()">
-      Sign out
-    </button>
+    <button class="logout-btn" onclick="localStorage.setItem('loggedIn','false'); window.location.replace('index.html');">
+  Sign out
+</button>
 
     <p class="version">
       CreditWise AI • Prototype v1.0
