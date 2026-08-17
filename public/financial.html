@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#155EEF">
+  <title>Financial Information — CreditWise AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="signup-screen">
+
+    <button class="back-btn" onclick="history.back()">←</button>
+
+    <div class="signup-content">
+
+      <div class="step-label">
+        STEP 4 OF 4
+      </div>
+
+      <h1>Tell us about your<br><span>financial picture.</span></h1>
+
+      <p class="signup-description">
+        Enter your typical monthly figures so CreditWise can understand your financial behaviour and calculate your Trust Score.
+      </p>
+
+      <form id="financialForm">
+
+        <label for="income">Monthly Income</label>
+        <input
+          id="income"
+          type="number"
+          min="0"
+          placeholder="e.g. 245000"
+          required
+        >
+
+        <label for="savings">Monthly Savings</label>
+        <input
+          id="savings"
+          type="number"
+          min="0"
+          placeholder="e.g. 48500"
+          required
+        >
+
+        <label for="spending">Monthly Spending</label>
+        <input
+          id="spending"
+          type="number"
+          min="0"
+          placeholder="e.g. 126300"
+          required
+        >
+
+        <button class="primary-btn signup-submit" type="submit">
+          Calculate My Score
+          <span>→</span>
+        </button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <script>
+    document.getElementById("financialForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const income = Number(document.getElementById("income").value);
+      const savings = Number(document.getElementById("savings").value);
+      const spending = Number(document.getElementById("spending").value);
+
+      if (income <= 0) {
+        alert("Please enter a valid monthly income.");
+        return;
+      }
+
+      if (savings < 0 || spending < 0) {
+        alert("Savings and spending cannot be negative.");
+        return;
+      }
+
+      if (savings + spending > income) {
+        alert("Your savings and spending cannot be greater than your income.");
+        return;
+      }
+
+      localStorage.setItem("monthlyIncome", String(income));
+      localStorage.setItem("monthlySavings", String(savings));
+      localStorage.setItem("monthlySpending", String(spending));
+
+      window.location.href = "dashboard.html";
+    });
+  </script>
+
+</body>
+</html>
